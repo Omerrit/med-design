@@ -65,10 +65,14 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     });
 
+    
+
     $(window).on('resize', function(){
         mouse_x = 0;
         mouse_y = 0;
+        
         changeVisiblePhoto();
+        playVideo();
     });
    
 
@@ -114,7 +118,60 @@ window.addEventListener('DOMContentLoaded', event => {
             })
         }
     }
+
+    playVideo();
+    
 });
+
+function playVideo(){
+    if(!isMobileDevice()){
+        loadVideo();
+    }
+    else{
+        removeVideo();
+    }
+}
+
+function loadVideo(){
+    let lazyVideos = [].slice.call(document.querySelectorAll("video.page-video"));
+
+    if ("IntersectionObserver" in window) {
+        var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(video) {
+                if (video.isIntersecting) {
+                    for (var source in video.target.children) {
+                        var videoSource = video.target.children[source];
+                        if (!isMobileDevice() && typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                            videoSource.src = videoSource.dataset.src;
+                        }
+                    }
+        
+                    video.target.load();
+                    lazyVideoObserver.unobserve(video.target);
+                }
+            });
+        });
+    
+        lazyVideos.forEach(function(lazyVideo) {
+            lazyVideoObserver.observe(lazyVideo);
+        });
+    }
+}
+
+function removeVideo(){
+    let lazyVideos = document.querySelectorAll(".page-video");
+    lazyVideos.forEach(lazyVideo => {
+        for (var source in lazyVideo.children) {
+            var videoSource = lazyVideo.children[source];
+            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                videoSource.src = '';
+            }
+        }
+        lazyVideo.load();
+    });
+    
+}
+
 
 
 function moveLayers(container, layer, x, y){
@@ -140,11 +197,27 @@ function getMaxHeight(){
 }
 
 function isMobileDevice(){
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
-        .test(navigator.userAgent)){
-        return true;
-    }
-    return false;
+
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /BB/i,
+        /PlayBook/i,
+        /IEMobile/i, 
+        /Windows Phone/i,
+        /Kindle/i,
+        /Silk/i,
+        /Opera Mini/i,
+        /Windows Phone/i
+    ];
+    
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    }) || (( window.innerWidth <= 800 ));
 }
 
 function fadeOut(el) {
