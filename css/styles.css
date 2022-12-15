@@ -61,22 +61,24 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-bg: #FFFFFF;
 }
 ::selection {background: #000000; color:#fff;}
 ::-moz-selection {background: #000000; color:#fff;}
 ::-webkit-selection {background: #000000; color:#fff;}
 
 @font-face {
-  font-family: benzin-semibold; /* Гарнитура шрифта */
-  src: url("../assets/font/Benzin-Font/Benzin-Semibold.ttf"); /* Путь к файлу со шрифтом */
+  font-family: benzin-semibold;
+  src: url("../assets/font/Benzin-Font/Benzin-Semibold.ttf"); 
  }
 
 @font-face {
-  font-family: benzin-regular;
-  src: url("../assets/font/Benzin-Font/Benzin-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
+font-family: 'benzin-regular';
+src: local('Benzin Regular'), local('Benzin-Regular'),
+    url('../assets/font/Benzin-Font/Benzin-Regular.woff2') format('woff2'),
+    url('../assets/font/Benzin-Font/Benzin-Regular.woff') format('woff'),
+    url('../assets/font/Benzin-Font/Benzin-Regular.ttf') format('truetype');
+font-weight: 100;
 }
 
 @font-face {
@@ -85,20 +87,14 @@
 }
 
 @font-face {
-  font-family: benzin-bold;
-  src: url("../assets/font/Benzin-Font/Benzin-ExtraBold.ttf");
+  font-family: 'gotham-pro-regular';
+  src: url('../assets/font/GothamPro/GothamPro.eot');
+  src: url('../assets/font/GothamPro/GothamPro.eot?#iefix') format('embedded-opentype'),
+  url('../assets/font/GothamPro/GothamPro.woff') format('woff'),
+  url('../assets/font/GothamPro/GothamPro.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
 }
-
-@font-face {
-  font-family: benzin-extrabold;
-  src: url("../assets/font/Benzin-Font/Benzin-ExtraBold.ttf");
-}
-
-@font-face {
-  font-family: brass-regular;
-  src: url("../assets/font/bf-garant-pro/BrassFonts\ -\ BF\ Garant\ Pro\ Regular.otf");
-}
-
 
 
 *,
@@ -146,6 +142,10 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 700;
   line-height: 1.2;
+  font-family: 'benzin-semibold';
+  position: relative;
+  z-index: 1020;
+  color: white;
 }
 
 h1, .h1 {
@@ -159,8 +159,8 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.375rem + 0.9vw);
-  color: white;
 }
+
 @media (min-width: 1200px) {
   h2, .h2 {
     font-size: 2.4rem;
@@ -197,9 +197,10 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
   position: relative;
-  font-family: benzin-regular;
-  font-size: 1.2em;
+  font-family: 'benzin-regular';
+  font-size: 18px;
   z-index: 1020;
+  letter-spacing: 0.03em;
 }
 
 p.sub{
@@ -207,21 +208,16 @@ p.sub{
   font-size: 1em;
 }
 
-h2 {
-  font-family: benzin-semibold;
-  position: relative;
-  z-index: 1020;
- }
-
 h3 {
-  font-family: benzin-regular;
+  font-family: 'benzin-regular';
   font-size: 1.2rem;
 }
 
 .p-normal-text{
-  font-size: 0.96rem;
-  font-family: brass-regular;
+  font-size: 0.92rem;
+  font-family: 'gotham-pro-regular';
   line-height: 1.2;
+  color:#000000;
 }
 
 @media (max-width: 767px) {
@@ -250,7 +246,9 @@ address {
   line-height: inherit;
 }
 .font-color-y{
-  color: #fff200;
+  color: #fff100;
+  -webkit-text-stroke-width: 0.001px;
+  -webkit-text-stroke-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
 }
 
 ol,
@@ -306,7 +304,10 @@ strong {
 }
 
 small, .small {
-  font-size: 0.875em;
+  font-size: 0.75em;
+}
+small-0 {
+  font-size: 0.80em;
 }
 
 mark, .mark {
@@ -6546,13 +6547,13 @@ textarea.form-control-lg {
   }
 }
 .clearfix{
-  height: 900px;
+  height: 1200px;
   width: 100%;
   position: absolute;
   overflow: hidden;
   z-index: auto;
   margin-left: -3vw;
-  top: 250px;
+  top: 300px;
 }
 /* .clearfix-hidden{
   overflow: hidden;
@@ -11483,16 +11484,6 @@ html {
   }
 }
 
-/* .scroll-to-top:active {
-  background: rgba(52, 58, 64, 0.5);
-} */
-
-/* @media (hover: none) {
-  .scroll-to-top:hover {
-    background: rgba(52, 58, 64, 0.5);
-    }
-} */
-
 #sidebar-wrapper {
   position: fixed;
   z-index: 2;
@@ -11568,7 +11559,7 @@ svg {
 }
 
 .menu-top, .menu-middle, .menu-bottom, .just{
-  stroke: #fff200;
+  stroke: #fff100;
   stroke-width: 0.16rem;
   /* stroke-dasharray: 30, 75.39; */
   transition: 0.25s;
@@ -11577,6 +11568,44 @@ svg {
 svg + svg {
   margin-left: 1.5rem;
 }
+
+.arrow-header > svg, .arrow-change-photos > svg, .arrow-map > svg, .arrow-services > svg {
+  position: absolute;
+  cursor: default;
+  /* transform: translate(100px, -23px); */
+}
+
+.arrow-header{
+  position: relative;
+  height: 13px;
+  width: 200px;
+  left: calc(50% - 183px/2 + 80.5px);
+  top: -23.5px;
+  overflow: hidden;
+}
+
+.arrow-change-photos{
+  position: relative;
+  height: 1px;
+  width: 90%;
+  margin-top: 22px;
+}
+
+.arrow-change-photos > svg {
+  right: 0;
+  left: auto;
+  height: 13px;
+
+}
+
+.arrow-map {
+  position: relative;
+  height: 13px;
+  top: 23px;
+  right: 155px;
+  /* overflow: hidden; */
+}
+
 
 #menu-fixed-top{
   top: calc(2% + 1vw);
@@ -11607,7 +11636,7 @@ svg + svg {
 #toggle span:before {
   content: "";
   position: absolute;
-  background-color:#fff200;
+  background-color:#fff100;
   left: 0;
   top: 16px;
 }
@@ -11617,7 +11646,7 @@ svg + svg {
 #toggle span {
   position: relative;
   display: block;
-  background-color:#fff200;
+  background-color:#fff100;
 }
 
 #toggle span,
@@ -11761,6 +11790,7 @@ li a:focus {
   position: relative;
   z-index: 1010;
   height: 10%;
+  width: 5%;
 }
 
 .a-without-line:hover {
@@ -11775,22 +11805,33 @@ li a:focus {
   border-color: transparent;
   border:none;
   box-shadow: none !important;
-  font-family: benzin-regular;
-  transition: .5s; 
+  font-family: 'benzin-regular';
+  transition: .3s; 
   z-index: 1020;
+  display: inline-block;
 }
 
 #sign-up-btn:hover {
-  color: #fff200;
+  color: #fff100;
 } 
 
+#sign-up-btn > p {
+  font-family: 'benzin-medium';
+  font-size: 1.2em;
+}
+
 .gain-center{
-  transition: .5s; 
+  display: inline-block;
+  transform: scale(1.0);
+}
+
+.gain-center{
   text-align: center; 
 }
 .gain-center:hover {
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
+
 
 @media (pointer: coarse){
   #sign-up-btn:hover {
@@ -11811,14 +11852,14 @@ li a:focus {
 }
 
 #logo{
-  /* width:100%; */
-  width: 40%;
+  width:100%;
+  /* width: 40%; */
   background-color: transparent;
 }
 
 .logo{
-  top: 4%;
-  /* top: 2%; */
+  /* top: 4%; */
+  top: 2%;
   left: 2%;
   margin-right: auto;
   position: absolute;
@@ -11834,6 +11875,7 @@ li a:focus {
   position: relative;
   z-index: 997;
   padding: 50px 3vw;
+  background-color: #FFFFFF;
 }
 
 #about,
@@ -11853,12 +11895,46 @@ li a:focus {
   padding: 50px 3vw;
   position: relative;
   padding-bottom: 1rem;
+  background-color: #FFFFFF;
   /* padding-top: 20rem; */
-  background: radial-gradient(700px 370px at 50% 65%, #fff200 -10%, #f0ec99 45%, #f3f2e2 80%, #f8f9fa 100%);
+  /* background: radial-gradient(700px 370px at 50% 65%, #fff100 -10%, #f0ec99 45%, #f3f2e2 80%, #f8f9fa 100%); */
+  /* background: radial-gradient(700px 370px at 50% 50%, #FFF100 0%, rgba(196, 196, 196, 0) 100%); */
 }
 
-.background-elipse{
-  background: radial-gradient(700px 400px at 75% 30%, #fff200 -10%, #f0ec99 45%, #f3f2e2 80%, #f8f9fa 100%);
+.background-ellipse-top{
+  position: absolute;
+  width: calc(10% + 1000px);
+  height: 100%;
+  margin-right: 0;
+  margin-left: auto;
+  top: 0; left: auto; bottom: 0; right: 0;
+  overflow: hidden;
+}
+
+.background-ellipse-middle{
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 600px);
+  top: -300px; left: 0; bottom: 0; right: 0;
+  overflow: hidden;
+  z-index: 994;
+}
+
+.background-ellipse-bottom{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0; bottom: 0; right: 0;
+  margin-left: calc(50% - 970px);
+  margin-right: auto;
+}
+
+.background-ellipse-top > svg, .background-ellipse-middle > svg,  .background-ellipse-bottom > svg {
+  cursor: default;
+}
+
+.background-ellipse{
+  background: radial-gradient(700px 400px at 75% 30%, #fff100 -10%, #f0ec99 45%, #f3f2e2 80%, #f8f9fa 100%);
 }
 
 #col-start{
@@ -11898,6 +11974,15 @@ li a:focus {
 #canvas-container-left-top{
   left: 0px;
   top: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+#canvas-left-top,  #canvas-right-top, #canvas-left-bottom, #canvas-right-bottom {
+  stroke:#fff100;
+  stroke-width: 0.25rem;
+  fill: none;
+  cursor: default;
 }
 
 #canvas-container-right-top{
@@ -11935,7 +12020,7 @@ li a:focus {
   margin-left: 6vw;
 }
 .row-container-height{
-  min-height: 35rem;
+  min-height: 40rem;
 }
 .row-container-height.wc-p{
   padding-right: 0;
@@ -11973,21 +12058,41 @@ li a:focus {
 } */
 
 #team{
-  padding-top: 5rem;
-  padding-bottom: 10rem;
+  padding: 0px 3vw;
+  width: 100%;
+  height: auto;
+  display: table;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%); /*, url("../assets/img/works-bg.jpg");*/
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
 }
 
-/* #team .row-container-height{
-  min-height: 35rem;
-} */
+#team .row-container-height {
+  min-height: 30rem;
+}
+
+#team .works-container{
+  padding-top: 50px;
+}
+
+@media (min-width: 915px) {
+  #team .row-container-height {
+    height: calc(50px + (950 - 50) * ((100vw - 200px) / (1920 - 200)));
+    width: auto;
+  }
+}
+
+@media (min-width: 1920px) {
+  #team .row-container-height {
+    height: 100vh;
+  }
+}
 
 #services{
   z-index: index auto;
-  background-image: radial-gradient(1000px 600px at 23% 30%, #fff200 -7%, #f8f9fa 55%);
+  /* background-image: radial-gradient(1000px 600px at 23% 30%, #fff100 -7%, #f8f9fa 55%); */
 }
 
 
@@ -12062,18 +12167,6 @@ footer.footer .social-link:hover {
   text-decoration: none;
 }
 
-.map iframe {
-  pointer-events: none;
-  height: 100%;
-  width: 100%;
-  border: 0;
-}
-
-@media (max-width: 992px) {
-  .map {
-    height: 75%;
-  }
-}
 .toolbar{
   display: flex;
   justify-content: space-between;
@@ -12094,6 +12187,7 @@ footer.footer .social-link:hover {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
   z-index: 999;
 }
 

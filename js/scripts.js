@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', event => {
 
-    draw(document.getElementById('canvas-left-top'));
-    draw(document.getElementById('canvas-right-top'));
-    draw(document.getElementById('canvas-left-bottom'));
-    draw(document.getElementById('canvas-right-bottom'));
+    // draw(document.getElementById('canvas-left-top'));
+    // draw(document.getElementById('canvas-right-top'));
+    // draw(document.getElementById('canvas-left-bottom'));
+    // draw(document.getElementById('canvas-right-bottom'));
 
     let scrollToTopVisible = false; 
     let mouse_y = 0;
@@ -81,6 +81,8 @@ window.addEventListener('DOMContentLoaded', event => {
         cScroll = $(this).scrollTop();
         document.querySelectorAll('.canvas-container').forEach(cnt => {
             let layer = cnt.querySelector('.layer');
+            if(layer == null)
+                return;
             const speed = Number(layer.getAttribute('data-speed'));
             const offsetX = Number(layer.getAttribute('offset_x'));
             const offsetY = Number(cnt.getAttribute('offset_y'));
@@ -103,6 +105,8 @@ window.addEventListener('DOMContentLoaded', event => {
         }else{
             document.querySelectorAll('.canvas-container').forEach(cnt => {
                 let layer = cnt.querySelector('.layer');
+                if (layer == null)
+                    return;
                 const speed = Number(layer.getAttribute('data-speed'));
                 const offsetX = Number(layer.getAttribute('offset_x'));
                 const offsetY = Number(cnt.getAttribute('offset_y'));
@@ -176,8 +180,8 @@ function removeVideo(){
 
 function moveLayers(container, layer, x, y){
     if(layer.id == 'canvas-right-bottom'){ 
-        // container.style.top = offsetY -200 + 'px';
-        layer.style.transform = `translateX(${x}px) translateY(${y+450}px) rotate(${180+y}deg)`;
+        container.style.top = 150 + 'px';
+        layer.style.transform = `translateX(${x}px) translateY(${y+520}px) rotate(${180+y}deg)`;
     }
     else{
         container.style.top = y + 'px';
@@ -217,7 +221,7 @@ function isMobileDevice(){
     
     return toMatch.some((toMatchItem) => {
         return navigator.userAgent.match(toMatchItem);
-    }) || (( window.innerWidth <= 800 ));
+    }); //|| (( window.innerWidth <= 800 ));
 }
 
 function fadeOut(el) {
@@ -244,20 +248,20 @@ function fadeIn(el, display) {
 };
 
 
-function draw(canvas){
-    let ctx = canvas.getContext('2d');
-    ctx.lineWidth = 4;
-    ctx.beginPath();
-    ctx.moveTo(204, 61);
-    ctx.lineTo(604, 61);
-    ctx.lineTo(804, 403);
-    ctx.lineTo(604, 749);
-    ctx.lineTo(204, 749);
-    ctx.lineTo(4,403);
-    ctx.strokeStyle = '#fff200';
-    ctx.closePath();
-    ctx.stroke();
-  }
+// function draw(canvas){
+//     let ctx = canvas.getContext('2d');
+//     ctx.lineWidth = 4;
+//     ctx.beginPath();
+//     ctx.moveTo(204, 61);
+//     ctx.lineTo(604, 61);
+//     ctx.lineTo(804, 403);
+//     ctx.lineTo(604, 749);
+//     ctx.lineTo(204, 749);
+//     ctx.lineTo(4,403);
+//     ctx.strokeStyle = '#fff200';
+//     ctx.closePath();
+//     ctx.stroke();
+//   }
 
 // based on Todd Motto functions
 // https://toddmotto.com/labs/reusable-js/

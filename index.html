@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -26,18 +26,23 @@
                 <video class="page-video" playsinline autoplay muted loop poster="assets/img/bg-1.PNG">
                     <source data-src="assets/img/Ink.mp4" type="video/mp4">
                 </video>
-                <div class="container text-center">
+                <div class="mt-4 container text-center">
                     <h2 class="mb-1">УЛЫБАЙСЯ</h2>
                     <h2 class="mb-4">С MЁD</h2>
-                    <p class="mb-3 font-color-y">Приходите к нам на прием</p>
+                    <p class="pt-2 mb-4 font-color-y">Приходите к нам на прием</p>
                     <a class="btn btn-primary gain-center" id="sign-up-btn" href="#about">
                         <p class="mb-0">записаться</p>
                     </a>
+                    <div class="arrow-header">
+                        <svg width="106" height="13" viewBox="0 0 106 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.2929 7.2929C-0.0976258 7.68343 -0.0976257 8.31659 0.2929 8.70712L6.65686 15.0711C7.04739 15.4616 7.68055 15.4616 8.07108 15.0711C8.4616 14.6806 8.4616 14.0474 8.07108 13.6569L2.41422 8.00001L8.07107 2.34315C8.4616 1.95263 8.4616 1.31947 8.07107 0.928941C7.68055 0.538416 7.04739 0.538416 6.65686 0.928941L0.2929 7.2929ZM106 7L1.00001 7.00001L1.00001 9.00001L106 9L106 7Z" fill="white"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
            
             <div class="logo">
-                <img src="assets/img/favicon.ico" alt="logo" id="logo">
+                <img src="assets/img/medlab_y.png" alt="logo" id="logo">
             </div>
             
             <div class="fixed-top" id="menu-fixed-top">
@@ -64,15 +69,32 @@
         </header>
         
         <!-- About-->
-        <section class="content-section background-elipse" id="about">
-            <div id="canvas-container-left-top" class="canvas-container" offset_x="0" offset_y="0">
-                <canvas id="canvas-left-top" width="808" height="808" class="layer" data-speed="-4" offset_x="-500" offset_y="0"></canvas>
+        <section class="content-section" id="about">
+            <div id="canvas-container-left-top" class="canvas-container" offset_x="0" offset_y="50">
+                <svg class="layer" data-speed="-4" offset_x="-500" offset_y="0" version="1.1" id="canvas-left-top" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" 
+                    width="808px" height="808px" viewBox="0 0 808 808">
+                    <g>
+                        <path d="M4,403L204,61H604L804,403L604,749H204z"/>
+                    </g>
+                </svg>
+                <!-- <canvas id="canvas-left-top" width="808" height="808" class="layer" data-speed="-4" offset_x="-500" offset_y="0"></canvas> -->
+            </div>
+            <div class="background-ellipse-top">
+                <svg width="1907" height="951" viewBox="0 0 1907 951" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100%" height="100%" fill="url(#blurr_top)"/>
+                    <defs>
+                    <radialGradient id="blurr_top" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 300) rotate(90) scale(450 750)">
+                    <stop stop-color="#FFF100"/>
+                    <stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+                    </radialGradient>
+                    </defs>
+                </svg>
             </div>
             <div class="d-flex justify-content-center">
                 <div class="works-container">
                     <p class="mb-4">Кто мы?</p>
                     <div class="container">
-                        <div class="row g-0 row-container-height">
+                        <div class="row g-0 align-items-center row-container-height">
                             <div class="align-self-start col-lg-5 col-top p-normal-text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </div>
@@ -80,7 +102,7 @@
                             <div class="align-self-center col-lg-5 col-bottom p-normal-text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,6 +120,11 @@
                                       <img src="assets/img/works-2.jpg" alt="2">
                                     </div>
                                 </div>
+                                <div class="arrow-change-photos">
+                                    <svg width="106" height="13" viewBox="0 0 82 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M105.707 8.70712C106.098 8.31659 106.098 7.68343 105.707 7.29291L99.3431 0.928943C98.9526 0.538419 98.3195 0.538419 97.9289 0.928943C97.5384 1.31947 97.5384 1.95263 97.9289 2.34316L103.586 8.00001L97.9289 13.6569C97.5384 14.0474 97.5384 14.6806 97.9289 15.0711C98.3194 15.4616 98.9526 15.4616 99.3431 15.0711L105.707 8.70712ZM-6.85997e-08 9L105 9.00001L105 7.00001L6.85997e-08 7L-6.85997e-08 9Z" fill="black"/>
+                                    </svg>      
+                                </div>                              
                             </div>
                             <div class="col-lg-5 col-bottom p-normal-text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -112,9 +139,11 @@
 
         <!-- Team-->
         <section class="content-section bg-light" id="team">
+            
             <video class="page-video" playsinline autoplay muted loop poster="assets/img/bg-1.PNG">
                 <source data-src="assets/img/team-video.mp4" type="video/mp4">
             </video>
+       
             <div class="d-flex justify-content-center">
                 <div class="works-container">
                     <p class="mb-4">Наша команда по спасению мира</p>
@@ -130,12 +159,29 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Services-->
         <section class="content-section bg-light pb-5" id="services">
             <div id="canvas-container-right-top" class="canvas-container" offset_x="0" offset_y="-300">
-                <canvas id="canvas-right-top" width="808" height="808" class="layer" data-speed="4" offset_x="500" offset_y="0"></canvas>
+                <svg class="layer" data-speed="4" offset_x="500" offset_y="0" version="1.1" id="canvas-right-top" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" 
+                    width="808px" height="808px" viewBox="0 0 808 808">
+                    <g>
+                        <path d="M4,403L204,61H604L804,403L604,749H204z"/>
+                    </g>
+                </svg>
+                <!-- <canvas id="canvas-right-top" width="808" height="808" class="layer" data-speed="4" offset_x="500" offset_y="0"></canvas> -->
             </div>
+            <div class="background-ellipse-middle">
+                <svg width="1907" height="951" viewBox="0 0 1907 951" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100%" height="100%" fill="url(#blurr_middle)"/>
+                    <defs>
+                    <radialGradient id="blurr_middle" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 500) rotate(90) scale(450 750)">
+                    <stop stop-color="#FFF100"/>
+                    <stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+                    </radialGradient>
+                    </defs>
+                </svg>
+            </div>    
             <div class="d-flex justify-content-center">
                 <div class="works-container">
                     <p class="mb-4">Что мы делаем?</p>
@@ -147,7 +193,16 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 align-self-start col-bottom">
-                                <p>услуги и цены</p>
+                                <div class="row">
+                                    <div class="col-1 arrow-services">
+                                        <svg width="13" height="106" viewBox="0 0 16 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.29289 105.707C7.68341 106.098 8.31658 106.098 8.7071 105.707L15.0711 99.3432C15.4616 98.9526 15.4616 98.3195 15.0711 97.9289C14.6805 97.5384 14.0474 97.5384 13.6568 97.9289L8 103.586L2.34314 97.9289C1.95262 97.5384 1.31945 97.5384 0.928928 97.9289C0.538404 98.3195 0.538403 98.9526 0.928928 99.3432L7.29289 105.707ZM7 -4.37114e-08L7 105L9 105L9 4.37114e-08L7 -4.37114e-08Z" fill="black"/>
+                                        </svg>
+                                    </div>
+                                    <div class="col">
+                                        <p>услуги и цены</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -195,7 +250,13 @@
             </div>
             <div class="clearfix">
                 <div id="canvas-container-left-bottom" class="canvas-container" offset_x="0" offset_y="-125">
-                    <canvas id="canvas-left-bottom" width="808" height="808" class="layer" data-speed="-4" offset_x="-500" offset_y="0"></canvas>
+                    <svg class="layer" data-speed="-4" offset_x="-500" offset_y="0" version="1.1" id="canvas-left-bottom" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" 
+                        width="808px" height="808px" viewBox="0 0 808 808">
+                        <g>
+                            <path d="M4,403L204,61H604L804,403L604,749H204z"/>
+                        </g>
+                    </svg>
+                    <!-- <canvas id="canvas-left-bottom" width="808" height="808" class="layer" data-speed="-4" offset_x="-500" offset_y="0"></canvas> -->
                 </div>
             </div>
         </section>
@@ -203,7 +264,24 @@
         <!--Contacts-->
         <section class="content-section bg-light" id="contacts">
             <div id="canvas-container-right-bottom" class="canvas-container" offset_x="0" offset_y="-200">
-                <canvas id="canvas-right-bottom" width="808" height="808" class="layer" data-speed="4" offset_x="500" offset_y="0"></canvas>
+                <svg class="layer" data-speed="4" offset_x="500" offset_y="0" version="1.1" id="canvas-right-bottom" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" 
+                        width="808px" height="808px" viewBox="0 0 808 808">
+                    <g>
+                        <path d="M4,403L204,61H604L804,403L604,749H204z"/>
+                    </g>
+                </svg>
+                <!-- <canvas id="canvas-right-bottom" width="808" height="808" class="layer" data-speed="4" offset_x="500" offset_y="0"></canvas> -->
+            </div>
+            <div class="background-ellipse-bottom">
+                <svg width="1907" height="951" viewBox="0 0 1907 951" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100%" height="100%" fill="url(#blurr_bottom)"/>
+                    <defs>
+                    <radialGradient id="blurr_bottom" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 580) rotate(90) scale(450 750)">
+                    <stop stop-color="#FFF100"/>
+                    <stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+                    </radialGradient>
+                    </defs>
+                </svg>
             </div>
             <div class="d-flex justify-content-center mb-5">
                 <div class="container works-container wc-p mx-0">
@@ -211,15 +289,20 @@
                         <div class="col-lg-2 align-self-start offset-left-contacts text-left">
                             <p class="mb-0">связь</p>
                             <p>с нами</p>
-                            <p class="small mb-0 p-normal-text">+7-960-886-57-48</p>
+                            <p class="small-0 mb-0 p-normal-text">+7-960-886-57-48</p>
                         </div> 
                         <div class="col-lg-6 ml-4 align-self-center text-center">
+                            <div class="arrow-map">
+                                <svg width="106" height="13" viewBox="0 0 106 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M105.707 8.70712C106.098 8.31659 106.098 7.68343 105.707 7.29291L99.3431 0.928943C98.9526 0.538419 98.3195 0.538419 97.9289 0.928943C97.5384 1.31947 97.5384 1.95263 97.9289 2.34316L103.586 8.00001L97.9289 13.6569C97.5384 14.0474 97.5384 14.6806 97.9289 15.0711C98.3194 15.4616 98.9526 15.4616 99.3431 15.0711L105.707 8.70712ZM-6.85997e-08 9L105 9.00001L105 7.00001L6.85997e-08 7L-6.85997e-08 9Z" fill="black"/>
+                                </svg>
+                            </div>
                             <a class="a-without-line" href="#"><p>карта</p></a>
                         </div>
                         <div class="col-lg-2 align-self-end offset-right-contacts">
                             <p class="mb-0">как нас</p> 
                             <p>найти</p>
-                            <p class="small mb-0 p-normal-text text-right">ул.Косыгина 5</p>
+                            <p class="small mb-0 p-normal-text text-right">ул. Косыгина 5</p>
                             <p class="small mb-0 p-normal-text text-right">Стоматология МЁД</p>
                             <p class="small mb-0 p-normal-text text-right">Вход со двора</p>
                         </div>
@@ -233,13 +316,13 @@
                     <div class="container px-0">
                         <div class="row gx-0 justify-content-center">
                             <div class="col-lg-2">
-                                <p class="small mb-0 p-normal-text ">Лицензия</p>
+                                <p class="small-0 mb-0 p-normal-text ">Лицензия</p>
                             </div>
                             <div class="col-lg-2">
-                                <p class="small mb-0 p-normal-text ">Лицензия</p>
+                                <p class="small-0 mb-0 p-normal-text ">Лицензия</p>
                             </div>
                             <div class="col-lg-2">
-                                <p class="small mb-0 p-normal-text ">Лицензия</p>
+                                <p class="small-0 mb-0 p-normal-text ">Лицензия</p>
                             </div>
                         </div>
                     </div>
