@@ -161,11 +161,11 @@ window.addEventListener('DOMContentLoaded', event => {
         mouse_x = 0;
         mouse_y = 0;
     
+        max_width = getChangeMaxWidth();
         moveLayers(top_offset);
         changeCollapsible();
         moveBlurr(top_offset);
         changeVisiblePhoto(photos, photo1, photo2);
-        max_width = getChangeMaxWidth();
     }
 
     setStartingPosition();
